@@ -23,7 +23,7 @@
   </style>
 </head>
 <body>
-  <!-- 第一种实现方式 -->
+  <!-- 第一种实现方式优化+半颗星星 -->
   <ul class="rating" id="rating">
     <li class="rating-item" title="很不好"></li>
     <li class="rating-item" title="不好"></li>
@@ -40,6 +40,29 @@
     </ul>
   <script src="js/jquery-3.3.1.min.js"></script>
   <script>
+    var rating = (function () {
+      // 默认参数
+      var defaults = {
+        num: 0,
+        readOnly: false,
+        select: function () {},
+        chosen: function () {}
+      };
+      // 初始化
+      var init = function (el, options) {
+        
+      };
+      return {
+        init: init
+      };
+    })();
+    
+    rating.init('#rating', {
+      num: 2
+    });
+
+
+    /*
     var rating = (function () {
       // jQuery插件
       $.fn.extend({
@@ -79,6 +102,7 @@
     })();
     rating.init('#rating', 2);
     $('#rating2').rating(4);
+    */
   </script>
 </body>
 </html>
